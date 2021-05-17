@@ -6,6 +6,9 @@ function percentage(marks, total) {
 }
 
 // Your code goes here
+let percentage = function percentage(marks, total) {
+  return (marks * 100) / total;
+}
 
 let percentage = function (marks, total) {
   return (marks * 100) / total;
@@ -13,6 +16,8 @@ let percentage = function (marks, total) {
 let percentage = (marks, total) => {
   return (marks * 100) / total;
 }
+
+let percentage = (marks, total) => (marks * 100) / total;
 
 ```
 
@@ -69,7 +74,7 @@ let add = function (a, b) {
 }  // Function Expression
 ```
 4. Why is a function call an expression in JavaScript?
-Ans: Function call is also an expression because it results into something.
+Ans: Function call is also an expression because it always results into a value.
 
 5. Write VALID and INVALID next to each example below with the reason.
 
@@ -78,9 +83,9 @@ function add(a, b) {
   return a + b;
 }
 
-let five = add(2, 3); // VALID
-five = add; // INVALID
-five = five(10, 11); // Invalid
+let five = add(2, 3); // VALID 5
+five = add; // VALID 
+five = five(10, 11); // valid 21
 five = function () {
   return 'Hello';
 }; // VALID 
@@ -102,7 +107,7 @@ add(12, 14) // This a function Call/execution
 
 7. What is the similarities between function definition and function call?
 
-Ans: 
+Ans: Functions Definition as well as the function call, both are expessions in JavaScript. 
 
 8. Is the code below valid or invalid. Explain with reason.
 
@@ -129,3 +134,4 @@ function average (a, b) {
 10. Explain what is callback function. Why you can pass a function inside a function?
 
 Ans: Whenever we pass a function definition inside another function the function becomes a higher order function and the function that we pass as parameter to the HOF is known as callback function.
+We can Pass a function inside another function because function is an expression in javascript.
