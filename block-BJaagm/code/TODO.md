@@ -6,7 +6,8 @@
 
 2. Where the JavaScript code gets executed?
 ```js
-// Ans: The JavaScript code gets executed inside the Execution Context.
+// Ans: JavaScript Engine 
+// The JavaScript code gets executed inside the Execution Context.
 //  In JavaScript, execution context is an abstract concept that holds information about the      environment within which the current code is being executed.
 
 ```
@@ -23,7 +24,7 @@
 ```
 5. Execution context consists of what all things?
 ```js
-// Ans: Execution context contains specific section which is used for storing data and is also known as memory.  
+// Ans: Execution context contains a specific section which is used for storing data and is also known as memory.  It also Contains A section where the execution of code happen.
 
 ```
 6. What are the different types of execution context?
