@@ -66,4 +66,5 @@ let counter = function () {
   }
   return increment();
 };
+// This is a function expression so it will throw an error when it is called before declaration.
 ```
