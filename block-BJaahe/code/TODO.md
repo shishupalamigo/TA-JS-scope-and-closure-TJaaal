@@ -6,7 +6,7 @@
 
 function outer(str) {
   let sayHello = () => alert(str);
-  return sayHello();
+   sayHello();
 }
 
 ```
@@ -15,7 +15,7 @@ function outer(str) {
 
 ```js
 function delay(cb, time) {
-  return function display() {
+  return function () {
     setTimeout(cb, time);
   }
 }
@@ -83,13 +83,12 @@ When `forEach` function is called it returns another function. When the returned
 function forEach(arr) {
   // Your code goes here
   let index = 0;
-  function display() {
+  return function () {
     return arr[index++];
-  }
-  return display;
+ }
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
@@ -104,11 +103,9 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 ```js
 function addDesignation(title) {
   // your code goes here
-    function display(prefix) {
+   return function (prefix) {
     return `${prefix} ${title}`;
-  }
-
-  return display;
+  };
 }
 
 let sales = addDesignation('Salesman');
@@ -137,8 +134,7 @@ function changeSalary(currentSalary) {
      lower: function() {
       currentSalary -= 500;
       return currentSalary;
-    },
-    
+    },   
      current: function() {
       return currentSalary;
     }
@@ -168,10 +164,13 @@ function nameFactory(firstName, lastName) {
     }, 
 
     setFirstName: function (fName) {
-      return `${fName} ${lastName}`;
+      firstName =  fName;
+      return `${firstName} ${lastName}`;
+
     },
 
     setLastName: function (lName) {
+      lastName = lName;
       return `${firstName} ${lName}`;
     }
 
@@ -192,7 +191,7 @@ The returned function accepts a string (children) and returns the children with 
 ```js
 function createTag(tag) {
   // your code goes here
-   return function display(str) {
+   return function (str) {
     let elm = document.createElement(tag);
     elm.innerText = str;
     return elm;
