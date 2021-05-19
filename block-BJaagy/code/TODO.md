@@ -10,10 +10,26 @@ return newArr;
 function exp(n) {
   return n ** n;
 }
+// HOF
+function outer(cb) {
+  return cb();
+}
+// Cb
+function inner(num) {
+  return num + 1;
+}    
+outer(inner); 
+
 ```
 
 2. Create a function by you choice that returns a function reference.
-
+```js 
+    function outer() {
+      function inner(num) {return num + 1}
+      return inner;
+    }
+    outer();
+```
 
 
 3. Create a higher order function called `map` that takes two inputs:
@@ -31,6 +47,14 @@ function map(arr, cb) {
     newArr.push(arr[i]);
   }
   return newArr;
+}
+// Map Function using For Of loop
+function myMap(arr, cb) {
+  let final = [];
+  for(let elm of arr) {
+    final.push(cb(elm));
+  }
+  return final;
 }
 
 
@@ -50,6 +74,12 @@ multiplyByTwo(2); //-> 4
 function forEach(arr, cb) {
     for(let i = 0; i < arr.length; i++ ) {
     arr[i] == cb(arr[i]);
+  }
+}
+// forEach using for of 
+function forEch(arr, cb) {
+  for(let elm of arr) {
+    cb(elm);
   }
 }
 
