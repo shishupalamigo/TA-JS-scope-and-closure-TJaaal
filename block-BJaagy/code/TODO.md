@@ -1,6 +1,20 @@
 1. Create a function by your choice that accepts a callback function.
+```js
+// HOF
+let arr = [3, 5, 7,9];
+function FindExponentialOfArr(arr, cb) {
+let newArr = arr.map(e => cb(e));
+return newArr;
+}
+// Callback Function
+function exp(n) {
+  return n ** n;
+}
+```
 
 2. Create a function by you choice that returns a function reference.
+
+
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -10,6 +24,15 @@ Have `map` return a new array filled with values that are the result of the 'cal
 
 ```js
 // Your code goes here
+function map(arr, cb) {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++ ) {
+    arr[i] == cb(arr[i]);
+    newArr.push(arr[i]);
+  }
+  return newArr;
+}
+
 
 // Test Your Code
 function multiplyByTwo(n) {
@@ -24,6 +47,11 @@ multiplyByTwo(2); //-> 4
 
 ```js
 // Your code goes here
+function forEach(arr, cb) {
+    for(let i = 0; i < arr.length; i++ ) {
+    arr[i] == cb(arr[i]);
+  }
+}
 
 // Test Your Code
 let alphabet = '';
@@ -37,6 +65,16 @@ console.log(alphabet); //prints 'abcd'
 5. Create higher-order function called `filter` takes an array and a callback, and runs the callback on each element of the array if the return value of callback is `truthy` store in new array return the new array.
 
 ```js
+function filter(arr, cb) {
+    let filteredArr = [];
+    for(let i = 0; i < arr.length; i++ ) {
+    if (cb(arr[i]) === true) {
+        filteredArr.push(arr[i]);
+       }
+  }
+    return filteredArr;
+}
+
 // Test Your Code
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
