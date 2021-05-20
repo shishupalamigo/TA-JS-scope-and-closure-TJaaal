@@ -166,7 +166,7 @@ console.log(name); // Arya Stark
 if (true) {
   let name = 'Arya Stark';
 }
-console.log(name); // Arya Stark 
+console.log(name); // name is not defined 
 ```
 
 15. Guess the output of the code below with a reason.
@@ -296,7 +296,7 @@ if (true) {
   myFunc();
 }
 
-// ReferenceError: Cannot access 'username before initialization
+// ReferenceError: Cannot access 'username' before initialization
 ```
 
 24. Guess the output and the reason behind that.
@@ -387,7 +387,7 @@ let allFunctions = [
 ];
 
 let ans = allFunctions.reduce((acc, cv) => {
-  acc = cv(acc)
+  acc = cv(acc);
   return acc;
 }, 100); 
 
