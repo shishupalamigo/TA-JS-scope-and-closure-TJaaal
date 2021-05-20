@@ -56,7 +56,7 @@ function intersection(...arrays) {
     let first = arrays[0];
   for(let i = 1; i < arrays.length; i++) {
     let second = arrays[1];
-    first.filter(elm => second.includes(elm));
+   first = first.filter(elm => second.includes(elm));
   }
   return first;
 }
