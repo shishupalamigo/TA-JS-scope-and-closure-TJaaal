@@ -7,9 +7,7 @@ The returned function accepts a sentence. If the sentence contains the `fromWord
 ```js
 function censor(fromWord, toWord) {
   return function (str) {
-    if (str.includes(fromWord)){
      return str.replace(fromWord, toWord);    
-    }
   }
 }
 
@@ -72,14 +70,13 @@ The returned function accepts one parameter.
 - If the parameter is the same as the password it will return the object in which we stored the values.
 
 ```js
-function createCache(callback, str) {
+function createCache(callback, pwd) {
   let obj = {};
   return function(para) {
-    if(para !== str) {
+    if(para !== pwd) {
       obj[para] = callback(para);
       return callback[para];
     }
-
     return obj;
   }
 }
@@ -104,15 +101,14 @@ function createCache(cb, pwd) {
   let obj = {};
   return function(para) {
     if(para !== pwd) {
-      if(obj[para]) {
-        
+      if(obj[para]) {   
         return obj[para];
-      } else {
+      } 
+        else {
       obj[para] = cb(para);
       return cb[para];
       }
     }
-
     return obj;
   }
 }
