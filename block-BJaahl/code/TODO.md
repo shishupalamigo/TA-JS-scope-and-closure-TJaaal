@@ -52,7 +52,9 @@ function once(cb, ...params) {
     if(isCalled === false) {
       cb(...params);
       isCalled = true;
-    };
+    } else {
+      alert("You can't call the  function again!");
+    }
   };
 }
 
@@ -66,16 +68,15 @@ log(); // return undefinde (can't be called twice)
 
 ```js
 function nTimes(cb, times, ...rest) {
-  let isCalled = false;
   let numberOfTimesCalled = 0;
   return function () {
-    if(isCalled == false) {
-      cb(...rest);
-      numberOfTimesCalled += 1;
-      if (numberOfTimesCalled > times ) {
-        isCalled = true;
+      if (numberOfTimesCalled >= times ) {
+          alert(`You can't call this function more than ${times} times!`)
       }
-    };
+        else {
+          cb(...rest);
+          numberofTimesCalled += 1; 
+      }
   };
 }
 
